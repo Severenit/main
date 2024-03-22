@@ -1,4 +1,3 @@
-// @ts-ignore
 import { Product } from "cart/compiled-types/types";
 
 export const MOCK_PRODUCTIONS: Product[] = [

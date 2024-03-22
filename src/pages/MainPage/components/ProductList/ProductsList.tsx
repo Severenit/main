@@ -1,9 +1,8 @@
 import React from "react";
 import { Flex } from "antd";
 import { ProductCard } from "../ProductCard/ProductCard";
-// @ts-ignore
-import { Product } from "cart/compiled-types/types";
 
+import { Product } from "cart/compiled-types/types";
 
 interface ProductsListProps {
   products: Product[];
