@@ -7,14 +7,14 @@ const { NativeFederationTestsHost } = require('@module-federation/native-federat
 const deps = require("./package.json").dependencies;
 
 const NODE_ENV = process.env.NODE_ENV;
-const remoteHeader = 'http://localhost:3001';
+const remoteHeader = !NODE_ENV ? process.env.REMOTE_HEADER : 'http://localhost:3001';
 console.log(remoteHeader);
 
 const moduleFederationConfig = {
   name: "main",
   remotes: {
     header: `header@${remoteHeader}/remoteEntry.js`,
-    cart: `cart@${'http://localhost:3002'}/remoteEntry.js`,
+    cart: `cart@${!NODE_ENV ? process.env.REMOTE_CART : 'http://localhost:3002'}/remoteEntry.js`,
   },
   shared: {
     ...deps,
