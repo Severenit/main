@@ -1385,8 +1385,9 @@ if (process.env.NODE_ENV !== "production") {
 var UserAddOutlined_default2 = /* @__PURE__ */ React8.forwardRef(UserAddOutlined2);
 
 // src/components/Header.tsx
-import { useLocation } from "react-router-dom";
-var Header = ({ navigate }) => {
+import { useLocation, useNavigate } from "react-router-dom";
+var Header = () => {
+  const navigate = useNavigate();
   const location = useLocation();
   const selectedKeys = useMemo(
     () => location?.pathname ? [location.pathname] : [],

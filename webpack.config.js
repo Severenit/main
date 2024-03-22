@@ -5,7 +5,7 @@ const { NativeFederationTypeScriptHost } = require('@module-federation/native-fe
 const { NativeFederationTestsHost } = require('@module-federation/native-federation-tests/webpack')
 
 const deps = require("./package.json").dependencies;
-
+console.log(process.env.NODE_ENV);
 const NODE_ENV = process.env.NODE_ENV;
 const remoteHeader = !NODE_ENV ? process.env.REMOTE_HEADER : 'http://localhost:3001';
 console.log(remoteHeader);

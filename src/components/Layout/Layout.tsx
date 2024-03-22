@@ -15,7 +15,7 @@ export const Layout: FC<PropsWithChildren> = ({ children }) => {
     >
       <Header>
         <Suspense>
-          <RemoteHeader navigate={navigate} />
+          <RemoteHeader />
         </Suspense>
       </Header>
 

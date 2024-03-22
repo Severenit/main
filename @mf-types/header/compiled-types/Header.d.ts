@@ -1,5 +1,3 @@
 import React from "react";
-declare const Header: ({ navigate }: {
-    navigate: any;
-}) => React.JSX.Element;
+declare const Header: () => React.JSX.Element;
 export default Header;

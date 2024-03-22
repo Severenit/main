@@ -5,7 +5,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npx webpack server",
+    "start": "NODE_ENV=devlopment npx webpack server",
     "predeploy": "npx webpack",
     "build": "npx webpack --mode production",
     "deploy": "gh-pages -d dist"
