@@ -13,7 +13,11 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "jsx": "react",
-    "typeRoots": ["./node_modules/@types", "./src/types/index.d.ts"]
+    "typeRoots": ["./node_modules/@types", "./src/types/index.d.ts"],
+    "paths": {
+      "*": ["./@mf-types/*"]
+    }
   },
-  "include": ["src"]
+  "include": ["src"],
+  
 }

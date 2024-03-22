@@ -1,7 +1,7 @@
 import React from "react";
 import { Card } from "antd";
 import { ShoppingCartOutlined } from "@ant-design/icons";
-import { Product } from "../../../../types";
+import { Product } from "cart/compiled-types/types";
 
 const { Meta } = Card;
 

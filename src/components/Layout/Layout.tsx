@@ -2,7 +2,6 @@ import AntdLayout, { Content, Footer, Header } from "antd/es/layout/layout";
 import React, { FC, PropsWithChildren, Suspense, lazy } from "react";
 import { useNavigate } from "react-router-dom";
 
-// @ts-ignore
 const RemoteHeader = lazy(() => import("header/Header"));
 
 export const Layout: FC<PropsWithChildren> = ({ children }) => {
@@ -16,7 +15,7 @@ export const Layout: FC<PropsWithChildren> = ({ children }) => {
     >
       <Header>
         <Suspense>
-          <RemoteHeader logo="ZAR_TEAM" navigate={navigate} />
+          <RemoteHeader navigate={navigate} />
         </Suspense>
       </Header>
 

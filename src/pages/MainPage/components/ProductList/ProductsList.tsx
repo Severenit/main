@@ -1,7 +1,9 @@
 import React from "react";
 import { Flex } from "antd";
 import { ProductCard } from "../ProductCard/ProductCard";
-import { Product } from "../../../../types";
+
+import { Product } from "cart/compiled-types/types";
+
 
 interface ProductsListProps {
   products: Product[];

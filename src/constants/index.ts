@@ -1,4 +1,4 @@
-import { Product } from "../types";
+import { Product } from "cart/compiled-types/types";
 
 export const MOCK_PRODUCTIONS: Product[] = [
   {
