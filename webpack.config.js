@@ -14,7 +14,7 @@ const moduleFederationConfig = {
   name: "main",
   remotes: {
     header: `header@${!NODE_ENV ? process.env.REMOTE_HEADER : 'http://localhost:3001'}/remoteEntry.js`,
-    cart: "cart@http://localhost:3002/remoteEntry.js",
+    cart: `cart@${!NODE_ENV ? process.env.REMOTE_CART : 'http://localhost:3002'}/remoteEntry.js`,
   },
   shared: {
     ...deps,
