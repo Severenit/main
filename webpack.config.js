@@ -1,20 +1,20 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const ExternalTemplateRemotesPlugin = require('external-remotes-plugin');
 const { ModuleFederationPlugin } = require("webpack").container;
 const { NativeFederationTypeScriptHost } = require('@module-federation/native-federation-typescript/webpack')
 const { NativeFederationTestsHost } = require('@module-federation/native-federation-tests/webpack')
 
 const deps = require("./package.json").dependencies;
+
 const NODE_ENV = process.env.NODE_ENV;
-console.log(NODE_ENV);
-console.log(process.env);
+const remoteHeader = 'http://localhost:3001';
+console.log(remoteHeader);
 
 const moduleFederationConfig = {
   name: "main",
   remotes: {
-    header: `header@${!NODE_ENV ? process.env.REMOTE_HEADER : 'http://localhost:3001'}/remoteEntry.js`,
-    cart: `cart@${!NODE_ENV ? process.env.REMOTE_CART : 'http://localhost:3002'}/remoteEntry.js`,
+    header: `header@${remoteHeader}/remoteEntry.js`,
+    cart: `cart@${'http://localhost:3002'}/remoteEntry.js`,
   },
   shared: {
     ...deps,
@@ -79,10 +79,9 @@ module.exports = (env) => {
       new HtmlWebpackPlugin({
         template: "./public/index.html",
       }),
-      new ModuleFederationPlugin(moduleFederationConfig),
+      new ModuleFederationPlugin(moduleFederationConfig), 
       NativeFederationTypeScriptHost({moduleFederationConfig}),
       NativeFederationTestsHost({moduleFederationConfig}),
-      new ExternalTemplateRemotesPlugin(),
     ],
     devServer: {
       static: {
